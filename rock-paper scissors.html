@@ -6,12 +6,17 @@
     body{
       font-family: Arial;
       background-color: rgb(25,25,25);
+      color:white;
     }
     .title{
       font-size: 30px;
       font-weight: bold;
       font-family: Arial;
       color: white;
+    }
+
+    .icon{
+      
     }
   </style>
   
@@ -47,7 +52,7 @@ let computerMove = '';
     }
 
     alert(`You picked rock. Computer picked ${computerMove}.You ${result}.`);
-    ">Rock</button>
+    "><img src = "rock-emoji.png" class="icon"> </button>
   <button onclick="
   const randomNumber= Math.random();
 let computerMove = '';
@@ -76,7 +81,7 @@ let computerMove = '';
     alert(`You picked paper. Computer picked ${computerMove}.You ${result}.`);
     "
   
-  > Paper</button>
+  > <img src = "paper-emoji.png"  class = "icon"></button>
   <button onclick=" 
   
   
@@ -106,6 +111,6 @@ let computerMove = '';
 
     alert(`You picked scissors. Computer picked ${computerMove}.You ${result}.`);"
   
-  >Scissors</button>
+  ><img src = "scissors-emoji.png" class = "icon"> </button>
 </body>
 </html>
