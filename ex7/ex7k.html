@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart quantity</title>
+</head>
+<body>
+ <button onclick="
+  console.log(`cart quantity: ${cartQuantity}`);"> show quantity </button> 
+ <button onclick="
+ addQuantity(1);
+ ">  add to cart </button> 
+ <button onclick="
+   addQuantity(2);
+ "
+ 
+ >  +2 </button> 
+ <button onclick="
+ addQuantity(3); "
+ >  +3</button>
+ 
+ <button onclick ="
+ resetQuantity();
+" > reset cart </button> 
+
+<button onclick = "  subQuantity(1);">remove from cart</button>
+<button   onclick = " subQuantity(2);">-2</button> 
+<button onclick = " subQuantity(3);"  >-3</button>
+
+<script>
+  let cartQuantity = 0;
+
+
+function subQuantity(value){
+  cartQuantity -= value;
+  console.log(`cart quantitty: ${cartQuantity}`);
+
+  if(cartQuantity>10){
+    alert('cart is full');
+    return;
+  }
+  else if( cartQuantity<0){
+    alert('not enough items in the cart');
+    return;
+  }
+
+  else if(cartQuantity === 0){
+    alert('update the cart');
+  }
+  
+
+} 
+function addQuantity(value){
+  
+cartQuantity += value;
+console.log(`cart quantitty: ${cartQuantity}`);
+if(cartQuantity>10){
+    alert('cart is full');
+    return;
+  }
+  else if( cartQuantity<0){
+    alert('not enough items in the cart');
+    return;
+  }
+  else if(cartQuantity === 0){
+    alert('update the cart');
+  }
+  
+}
+
+function resetQuantity(){
+  cartQuantity = 0;
+  console.log(`cart was reset.`);
+  console.log(`cart quantitty: ${cartQuantity}`);
+  alert('cart was reset');
+}
+</script>
+
+</body>
+</html>
