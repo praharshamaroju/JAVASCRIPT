@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex6g</title>
+</head>
+<body>
+
+
+
+  <button onclick="  guess('heads');
+    
+
+    
+    "> heads </button>
+  <button onclick = "  guess('tails');
+  "> tails </button>
+  <script>
+   let randomNumber = Math.random() ;
+   let result;
+   if(randomNumber < 0.5){
+    result = 'heads';
+   }
+   else{
+    result = 'tails';
+   }
+  function guess(value){
+    if(value === 'heads'){
+   const guess = 'heads';
+   console.log(guess === result ? 'win': 'lose');
+  }else if(value === 'tails'){
+    const guess = 'tails';
+    console.log(guess === result ? 'win': 'lose');
+  }
+}
+
+
+  </script>
+</body>
+</html>
