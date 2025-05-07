@@ -14,7 +14,7 @@
       playgame('tails');
     ">tails</button>
     <script>
-      const score = JSON.parse(localStorage.getItem('score')) || {
+      const game_score = JSON.parse(localStorage.getItem('game_score')) || {
         wins: 0,
         losses: 0
       };
@@ -25,12 +25,12 @@
 
         console.log(guess === result ? 'You win!' : 'You lose!');
         if (guess === result) {
-          score.wins++;
+          game_score.wins++;
         } else {
-          score.losses++;
+          game_score.losses++;
         }
-        console.log(score);
-        localStorage.setItem(console.log('score',JSON.stringify(score)));
+        console.log(game_score);
+        localStorage.setItem(console.log('game_score',JSON.stringify(game_score)));
       }
     </script>
   
