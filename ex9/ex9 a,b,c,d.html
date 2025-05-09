@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+<body>
+  <button class = "js-button">
+    9a
+  </button> 
+  
+
+  <button class ="js-b2">
+    9b
+
+  </button>
+  <button onclick="
+  document.querySelector('.js-choice').innerHTML='you chose: heads'; " > heads</button> <button onclick = "document.querySelector('.js-choice').innerHTML='you chose: tails';"> tails</button>
+
+  <p class = "js-choice"> </p>
+<input class = "js-input" placeholder="name" onkeydown=" 
+if(event.key === 'Enter'){
+    const name=document.querySelector('.js-input');
+    document.querySelector('.js-name').innerHTML = your name is ${name.value} 
+}
+">
+  <button onclick="const name=document.querySelector('.js-input');
+  document.querySelector('.js-name').innerHTML = your name is ${name.value} ; "class="js-input"> submit </button>
+  <p class = "js-name"> </p>
+  <script>
+    console.log(document.querySelector('.js-button'));
+    document.querySelector('.js-b2').innerHTML = '9b done!';
+
+  
+
+
+  </script> 
+</body>
+</html>
