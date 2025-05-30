@@ -38,12 +38,9 @@
   
   ><img src = "scissors-emoji.png" class = "icon"> </button>
 
-
-<p class="js-result"></p>
-<p class = 'js-moves'></p>
-  <p class =" js-score"></p>
-
-
+<p class = "js-result"></p>
+<p class = "js-moves"></p>
+<p class = "js-score"></p>
 <button onclick=" 
 score.wins=0;
 score.losses=0;
@@ -51,9 +48,6 @@ score.ties=0;
 localStorage.removeItem('score');
 updateScore();
 ">Reset score</button>
-
-
-
 
 <script>
 
@@ -65,7 +59,7 @@ let score = JSON.parse(localStorage.getItem('score'))
   losses:0,
   ties:0,
   };
-
+updateScore();
 /*
 if(!score){
   score = {
@@ -76,8 +70,6 @@ if(!score){
 }
 */
 
-
-updateScore();
   function playGame(playerMove){
     const computerMove = pickComputerMove();
 
@@ -124,17 +116,17 @@ if(result === 'you win'){
   score.ties +=1;
 }
  localStorage.setItem('score', JSON.stringify(score));
-updateScore();
- document.querySelector('.js-result').innerHTML = result;
- document.querySelector('.js-moves').innerHTML = 
- you ${playerMove} - ${computerMove} computer;
-    
-function updateScore(){
- document.querySelector('.js-score')
-    .innerHTML= wins: ${score.wins},losses: ${score.losses},ties: ${score.ties};
- }
+  
+ 
+ updateScore();
+ 
+document.querySelector('.js-result')
+.innerHTML = result;
 
-    
+
+document.querySelector('.js-moves')
+.innerHTML = `You ${playerMove} - ${computerMove}`;
+   
   }
 
 
@@ -158,6 +150,14 @@ function updateScore(){
   
 return computerMove;
 
+  }
+
+
+
+  function updateScore(){
+document.querySelector('.js-score')
+  .innerHTML = `wins: ${score.wins},losses: ${score.losses},ties: ${score.ties}`;
+ 
   }
 </script>
 
