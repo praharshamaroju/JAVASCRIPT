@@ -49,18 +49,29 @@ for(let i = 0 ; i < num.length; i++){
 }
 console.log(total);
 
-const numdoubled = [];
- for(let i = 0 ;i < num.length; i++){
-  const numb = num[i];
-  numdoubled.push(numb * 2);
- }
- console.log(numdoubled);
-
-
+function doubledarray(nums){
+  const numdoubled = [];
+  for(let i = 0 ;i < num.length; i++){
+    const numb = num[i];
+    if(num===0){
+      return numdoubled;
+    }
+    numdoubled.push(numb * 2);
+  }
+return numdoubled;
+}
+console.log(doubledarray([1,1,3]));
+console.log(doubledarray([2,2,5]));
 
 
  const tasks = ['bee','js'];
- for
+
+
+
+
+
+
+
   </script>
 
 </body>
