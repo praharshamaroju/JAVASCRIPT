@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11o</title>
+</head>
+<body>
+  <script>
+    function check(array){
+   
+ 
+   let index = -1;
+   for(i=0;i<array.length;i++){
+    if(array[i] === 'search'){
+      index = i;
+      break;
+    }
+   }
+return index;
+  }
+
+  console.log(check(['hello','world','search','good']));
+  console.log(check(['hi','hey']));
+  </script>
+</body>
+</html>
