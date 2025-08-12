@@ -6,8 +6,23 @@
   <title>Advanced Functions</title>
 </head>
 <body>
+  <button onclick = "" class = " js-button"> click </button>
   <script>
-    /*function greeting() {
+    /*
+    const button = document.querySelector('.js-button');
+    const eventlistener = () => {
+      console.log('click');
+    };
+    button.addEventListener('click',eventlistener);
+
+
+    button.addEventListener('click', () => {
+      console.log('click2');
+    });
+
+
+    button.removeEventListener('click',eventlistener );
+    *//*function greeting() {
       console.log('hello');
     }
     greeting();
@@ -63,18 +78,67 @@ setInterval(function(){
 
 console.log('next line 2');
 */
-
+/*
 [
   'make dinner',
   'wash dishes',
   'watch youtube'
-].forEach(function(value, index){
+].forEach((value, index) => {
   if(value == 'wash dishes'){
     return;
   }
   console.log(index);
 console.log(value);
 });
+
+const regularFunction = function(param,param2){
+  console.log('hello');
+}
+
+const arrowFunction = (param,param2) => {
+  console.log('hello');
+  return 5;
+};
+ 
+
+arrowFunction();
+const oneparam = param => {
+  console.log(param+1)
+};
+  
+  oneparam(2)
+
+  const oneline = () => 2+3;
+  console.log(oneline());
+  
+  const object2 = {
+    method: () => {
+
+    },
+    method(){
+
+    }
+  };
+  */
+
+
+console.log([1,-3,5].filter((value,index)=>{
+/*if (value>=0){
+  return true;
+} else{
+return false;
+
+}
+*/
+return value >=0;
+}));
+
+
+console.log([1,1,3].map((value,index)=>{
+return value*2;
+}));
+
+console.log([1,1,3].map(value=>value*2));/*shortcut*/
 
   </script>
 </body>

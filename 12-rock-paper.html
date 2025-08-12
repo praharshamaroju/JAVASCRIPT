@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-  <style>
+ <style>
     body{
       font-family: Arial;
       background-color: rgb(25,25,25);
@@ -34,16 +34,11 @@
 </head>
 <body>
   <p class="title"> Rock Paper Scissors </p>
-  <button onclick=" 
-   playGame('rock');
-    "><img src = "rock-emoji.png" class="icon"> </button>
-  <button onclick="
-  playGame('paper');
-  " > <img src = "paper-emoji.png"  class = "icon"></button>
-  <button onclick=" 
-  playGame('scissors');
-
-    "
+  <button  class="js-rock-button" ><img src = "rock-emoji.png" class="icon"> </button>
+  <button 
+  class="js-paper-button" > <img src = "paper-emoji.png"  class = "icon"></button>
+  <button 
+  class = "js-scissors-button"
   
   ><img src = "scissors-emoji.png" class = "icon"> </button>
 
@@ -78,7 +73,28 @@ if(!score){
   };
 }
 */
+document.querySelector('.js-rock-button').addEventListener('click',()=>{
+  playGame('rock');
+});
+document.querySelector('.js-paper-button').addEventListener('click',()=>{
+  playGame('paper');
+});
+document.querySelector('.js-scissors-button').addEventListener('click',()=>{
+  playGame('scissors');
+});
+ 
+document.body.addEventListener('keydown',(event)=>{
+  if(event.key=='r'){
+playGame('rock');
+  }
+  else if(event.key == 'p'){
+    playGame('paper');
+  }
+  else if(event.key=='s'){
+    playGame('scissors');
+  }
 
+});
   function playGame(playerMove){
     const computerMove = pickComputerMove();
 
@@ -174,9 +190,10 @@ document.querySelector('.js-score')
 let isAutoPlaying = false;
 let intervalId;
 
+
 function autoplay(){
   if(!isAutoPlaying) {
-   intervalId= setInterval(function(){
+   intervalId= setInterval(() => {
     const playerMove = pickComputerMove();
 playGame(playerMove);
   },1000);
