@@ -24,7 +24,15 @@
       font-size: 15px;
       padding: 8px 15px;
       cursor: pointer;
+
     }
+    .reset-confirm-button{
+      background-color: rgb(1, 1, 1);
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
     
   </style>
   
@@ -45,16 +53,17 @@
 <p class = "js-result"></p>
 <p class = "js-moves"></p>
 <p class = "js-score"></p>
-<button class ="reset-score-button" onclick=" 
-score.wins=0;
+<p class ="reset-confirm-button js-confirmation"></p>
+<button class ="reset-score-button js-reset-button " >Reset score</button>
+<button class = "auto-play-button js-autoplay-button" >Auto Play</button>
+<script>
+function Resetscore(){
+  score.wins=0;
 score.losses=0;
 score.ties=0;
 localStorage.removeItem('score');
 updateScore();
-">Reset score</button>
-<button class = "auto-play-button" onclick="autoplay();">Auto Play</button>
-<script>
-
+};
 
 let score = JSON.parse(localStorage.getItem('score')) 
 || 
@@ -91,9 +100,21 @@ playGame('rock');
     playGame('paper');
   }
   else if(event.key=='s'){
-    playGame('scissors');
+    playGame('scissors');}
+  else if(event.key=='a'){
+    autoplay();
+  }
+  else if(event.key=='Backspace'){
+    Resetscore();
+  }
   }
 
+);
+document.querySelector('.js-autoplay-button').addEventListener('click',()=>{
+  autoplay();
+});
+document.querySelector('.js-reset-button').addEventListener('click',()=>{
+showconfirmation();  
 });
   function playGame(playerMove){
     const computerMove = pickComputerMove();
@@ -198,11 +219,35 @@ function autoplay(){
 playGame(playerMove);
   },1000);
 isAutoPlaying = true;
+document.querySelector('.js-autoplay-button').innerHTML = 'stop playing';
+
   } else{
  clearInterval(intervalId);
  isAutoPlaying = false;
+ document.querySelector('.js-autoplay-button').innerHTML='auto play';
   }
  
+}
+
+function showconfirmation(){
+  document.querySelector('.js-confirmation').innerHTML=
+  `are you sure you want to reset the score?<br>
+  <button class="js-confirm-yes">yes</button>
+  <button class="js-confirm-no">no</button>
+    `;
+
+    document.querySelector('.js-confirm-yes').addEventListener('click',()=>{
+      Resetscore();
+      hidereset();
+    });
+
+    document.querySelector('.js-confirm-no').addEventListener('click',()=>{
+      hidereset();
+    });
+}
+
+function hidereset(){
+  document.querySelector('.js-confirmation').innerHTML='';
 }
 </script>
 
